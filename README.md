@@ -1,4 +1,4 @@
-#Personal puppet
+# Muh Personal puppet
 
 This is a puppet setup for new machines.
 
