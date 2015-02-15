@@ -1,3 +1,3 @@
-class git {
-  package { 'git': }
+class git ($package = 'git') {
+  package { $package: }
 }

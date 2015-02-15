@@ -11,3 +11,8 @@ It is probably wrong and bad.
 ## Install Puppet
 
     git init submodule --update --recursive
+    ./setup.sh
+
+## Run puppet apply
+
+    ./apply.sh

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 distro=''
+script=''
 path=$(cd $(dirname "$0") && pwd)
 
 fatal() {
@@ -22,7 +23,9 @@ elif [ -x /usr/bin/lsb_release ]; then
   distro=$(lsb_release -a | grep '^Distributor ID:' | cut -f2 | tr [:upper:] [:lower:])
 fi
 
-if [ ! -f "${path}/bootstrap/${distro}.sh" ]; then
+script="${path}/bootstrap/${distro}.sh"
+
+if [ ! -f "$script" ]; then
   fatal "Cannot find bootstrap script for ${distro}"
 fi
 
@@ -33,4 +36,6 @@ if ! echo $ans | grep -iq ^y; then
   fatal Cancelled
 fi
 
-sudo su - -c "chmod +x ${path}/bootstrap/${distro}.sh && ${path}/bootstrap/${distro}.sh"
+sudo su - -c "chmod +x ${script}"
+sudo su - -c "${script}"
+sudo su - -c "chmod -x ${script}"

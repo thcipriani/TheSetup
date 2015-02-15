@@ -1,10 +1,8 @@
 class dotfiles {
-  require git
 
-  exec { 'fetch-dotfiles':
-    command => 'git clone https://github.com/thcipriani/dotfiles.git .dotfiles',
-    cwd => '/home/tyler/',
-    unless => 'test -d /home/tyler/.dotfiles'
+  ::git::clone { 'dotfiles':
+    directory => '/home/tyler/.dotfiles',
+    remote    => 'https://github.com/thcipriani/dotfiles.git',
   }
 
   exec { 'setup-dotfiles':
@@ -12,7 +10,7 @@ class dotfiles {
     environment => [ "HOME=/home/tyler" ],
     cwd => '/home/tyler/.dotfiles',
     unless => 'test -L /home/tyler/.bashrc',
-    require => Exec['fetch-dotfiles'],
+    require => ::git::clone['dotfiles'],
   }
 
   exec { 'tyler-owner':
