@@ -12,7 +12,6 @@ class user::utils {
     'suckless-tools',
     'duplicity',
     'virtualbox',
-    'vagrant',
     'rxvt-unicode-256color',
     'trayer',
     'pass',
@@ -20,6 +19,10 @@ class user::utils {
     'x11-utils',
     'xdotool',
     'xfonts-terminus',
+    'python-boto',
+    'emacs',
+    'mutt-patched',
+    'msmtp',
   ]: }
 
   ::haskell::install{ [

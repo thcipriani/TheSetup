@@ -4,19 +4,19 @@ class user(
   $sudo = false
 ) {
   $groups = $sudo ? {
-      undef   => $group,
-      default => [
+      default => $group,
+      true => [
         $group,
         'sudo',
       ]
   }
 
-  user { "$user":
+  user { "${user}":
     ensure     => present,
     shell      => '/bin/bash',
     home       => "/home/${user}",
     groups     => $groups,
-    password   => '$6$m0)mE7$mgCFvV6n6j/zMs4ctIeqtZl3DzLhyLymOVZ7oC6aBFwmvwC4KvcLXCWZKZzrXuTx4u9ofcV8C/CjPnbyKDvuO.',
+    password   => $pass,
     managehome => true,
   }
 }

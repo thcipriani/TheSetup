@@ -1,0 +1,14 @@
+---
+vagrant::ubuntu::version: 1.7.2
+git::package: 'git'
+
+user::pass: '$6$m0)mE7$mgCFvV6n6j/zMs4ctIeqtZl3DzLhyLymOVZ7oC6aBFwmvwC4KvcLXCWZKZzrXuTx4u9ofcV8C/CjPnbyKDvuO.'
+user::user: 'tyler'
+user::group: 'tyler'
+user::sudo: true
+
+dotfiles::dotfile_repo: "https://github.com/thcipriani/dotfiles.git"
+dotfiles::emacs_repo: "https://github.com/thcipriani/emacs.git"
+dotfiles::homedir: "/home/tyler"
+dotfiles::owner: "tyler"
+dotfiles::group: "tyler"
