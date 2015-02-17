@@ -23,6 +23,10 @@ class user::utils {
     'emacs',
     'mutt-patched',
     'msmtp',
+    'powertop',
+    'cheese',
+    'nfs-kernel-server',
+    'mosh',
   ]: }
 
   ::haskell::install{ [
