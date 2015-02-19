@@ -27,6 +27,8 @@ class user::utils {
     'cheese',
     'nfs-kernel-server',
     'mosh',
+    'python-pip',
+    'google-talkplugin',
   ]: }
 
   ::haskell::install{ [

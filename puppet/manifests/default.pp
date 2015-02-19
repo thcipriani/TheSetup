@@ -6,4 +6,6 @@ class { '::vim': } ->
 class { '::dotfiles': } ->
 class { '::user::utils': } ->
 class { '::vagrant': } ->
-class { '::xsession': }
+class { '::xsession': } ->
+class { '::phpsh': } ->
+class { '::jjb': }
