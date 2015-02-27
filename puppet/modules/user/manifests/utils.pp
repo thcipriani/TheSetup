@@ -29,6 +29,10 @@ class user::utils {
     'mosh',
     'python-pip',
     'google-talkplugin',
+    'dict-gcide',
+    'units',
+    'openssh-server',
+    'cgroup-bin', # test mw ::mediawiki
   ]: }
 
   ::haskell::install{ [
