@@ -32,6 +32,8 @@ class user::utils {
     'dict-gcide',
     'units',
     'openssh-server',
+    'puppet-lint',
+    'vim-puppet',
     'cgroup-bin', # test mw ::mediawiki
   ]: }
 
