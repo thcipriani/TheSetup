@@ -34,6 +34,8 @@ class user::utils {
     'openssh-server',
     'puppet-lint',
     'vim-puppet',
+    'httpry',
+    's3cmd',
     'cgroup-bin', # test mw ::mediawiki
   ]: }
 

@@ -1,0 +1,10 @@
+---
+classes:
+  - '::user'
+  - '::vim'
+  - '::dotfiles'
+  - '::vagrant'
+  - '::xsession'
+  - '::phpsh'
+  - '::jjb'
+  - '::openstack'

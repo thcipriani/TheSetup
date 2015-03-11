@@ -1,9 +1,10 @@
 class user(
   $user,
   $group,
+  $pass,
+  $sshkey,
   $sudo = false,
   $sshkeytype = 'ssh-rsa',
-  $sshkey,
 ) {
   $groups = $sudo ? {
       default => $group,
@@ -22,11 +23,11 @@ class user(
     managehome => true,
   }
 
-  ssh_authorized_key { "${user}":
-    user    => "${user}",
-    type    => "${sshkeytype}",
-    key     => "${sshkey}",
-    require => User["${user}"],
+  ssh_authorized_key { $user:
+    user    => $user,
+    type    => $sshkeytype,
+    key     => $sshkey,
+    require => User[$user],
   }
 
   exec { 'sshd_fixes':
@@ -34,4 +35,6 @@ class user(
     unless  => 'grep -Fq "PermitRootLogin no" /etc/ssh/sshd_config',
     require => Package['openssh-server'],
   }
+
+  include ::user::utils
 }
