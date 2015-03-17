@@ -36,6 +36,8 @@ class user::utils {
     'vim-puppet',
     'httpry',
     's3cmd',
+    'mplayer2',
+    'ubuntu-restricted-extras', # I hate me :(
     'cgroup-bin', # test mw ::mediawiki
   ]: }
 
