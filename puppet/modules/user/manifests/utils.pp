@@ -6,6 +6,13 @@ class user::utils {
   include ::haskell
 
   package { [
+      'GitPython',
+  ]:
+      provider => 'pip',
+      require  => Package['python-pip'],
+  }
+
+  package { [
     'dunst',
     'curl',
     'feh',
@@ -37,6 +44,7 @@ class user::utils {
     'httpry',
     's3cmd',
     'mplayer2',
+    'lynx-cur',
     'ubuntu-restricted-extras', # I hate me :(
     'cgroup-bin', # test mw ::mediawiki
   ]: }

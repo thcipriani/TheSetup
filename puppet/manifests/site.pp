@@ -8,4 +8,5 @@ Exec {
     ], }
 Package { ensure => present, }
 
+include ::stdlib
 hiera_include('classes', [])
