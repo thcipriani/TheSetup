@@ -12,7 +12,7 @@ It is probably wrong and bad.
 
 ## Install Puppet
 
-    git init submodule --update --recursive
+    git submodule update --init --recursive
     ./setup.sh
 
 ## Run puppet apply
