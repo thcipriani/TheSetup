@@ -9,6 +9,10 @@ class base {
     include ::haskell
 
     package { [
+        'dialog',
+        'xsel',
+        'xclip',
+        'xcape',
         'dunst',
         'curl',
         'feh',
@@ -38,7 +42,6 @@ class base {
         'lynx-cur',
         'git-annex',
         'vlc',
-        'rake',
         'xscreensaver',
         'xscreensaver-gl',
         'xscreensaver-gl-extra',

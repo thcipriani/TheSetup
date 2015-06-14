@@ -36,7 +36,7 @@ class dotfiles(
 
   exec { "${owner}-owner":
     command => "chown -R ${owner}:${group} ${homedir}",
-    unless  => "test $(stat -c '%U' \"${homedir}\" = ${owner}",
+    unless  => "test $(stat -c '%U' \"${homedir}\") = ${owner}",
     require => [
       Exec['setup-dotfiles'],
     ],

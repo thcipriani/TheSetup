@@ -1,9 +1,11 @@
 ---
 classes:
-  - '::salt'
-  - '::user'
-  - '::base'
-  - '::vim'
-  - '::dotfiles'
-  - google::talk
-  - google::chrome
+    - salt
+    - user
+    - base
+    - vim
+    - dotfiles
+    - google::talk
+    - google::chrome
+    - volnoti
+    - vagrant
