@@ -35,6 +35,4 @@ class user(
     unless  => 'grep -Fq "PermitRootLogin no" /etc/ssh/sshd_config',
     require => Package['openssh-server'],
   }
-
-  include ::user::utils
 }
