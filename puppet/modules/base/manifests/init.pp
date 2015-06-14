@@ -14,7 +14,6 @@ class base {
         'feh',
         'suckless-tools',
         'duplicity',
-        'virtualbox',
         'rxvt-unicode-256color',
         'trayer',
         'pass',
@@ -30,7 +29,6 @@ class base {
         'cheese',
         'nfs-kernel-server',
         'mosh',
-        'google-talkplugin',
         'dict-gcide',
         'units',
         'openssh-server',
@@ -45,6 +43,7 @@ class base {
         'xscreensaver-gl',
         'xscreensaver-gl-extra',
         'graphicsmagick',
+        'xinput',
     ]:
         require => Exec['apt-get update'],
     }

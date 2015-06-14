@@ -37,7 +37,7 @@ class haskell::debian {
 
     exec { 'grab-latest-contrib':
         command => 'darcs get http://code.haskell.org/XMonadContrib',
-        creates => '/root/XmonadContrib',
+        unless  => 'test -d /root/XMonadContrib',
         cwd     => '/root',
         require => Package['darcs'],
     }
@@ -45,7 +45,7 @@ class haskell::debian {
     exec { 'grab-latest-xmonad':
         command => 'darcs get http://code.haskell.org/xmonad',
         cwd     => '/root',
-        creates => '/root/xmonad',
+        unless  => 'test -d /root/xmonad',
         require => Package['darcs'],
     }
 
@@ -64,11 +64,10 @@ define haskell::install (
   $pkg = $title
 ) {
   exec { "cabal-${name}":
-    command => "cabal install --global ${pkg}",
+    command     => "cabal install --global ${pkg}",
     environment => 'HOME=/root',
-    timeout => 0,
-    require => Exec['cabal update'],
-    onlyif  =>
-      "test -z \"$(ghc-pkg list --simple-output ${pkg})\"";
+    timeout     => 0,
+    require     => Exec['cabal update'],
+    unless      => "test -x /usr/local/bin/${pkg}";
   }
 }
