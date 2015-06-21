@@ -9,3 +9,5 @@ classes:
     - google::chrome
     - volnoti
     - vagrant
+    - docker::jessie
+    - python

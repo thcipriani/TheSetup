@@ -9,6 +9,8 @@ class base {
     include ::haskell
 
     package { [
+        'libnotify-bin',
+        'pcregrep',
         'dialog',
         'xsel',
         'xclip',
@@ -37,7 +39,6 @@ class base {
         'units',
         'openssh-server',
         'puppet-lint',
-        's3cmd',
         'mplayer2',
         'lynx-cur',
         'git-annex',
