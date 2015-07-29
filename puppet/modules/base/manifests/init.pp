@@ -9,6 +9,10 @@ class base {
     include ::haskell
 
     package { [
+        'racket',
+        'scrot',
+        'autossh',
+        'keychain',
         'libnotify-bin',
         'pcregrep',
         'dialog',

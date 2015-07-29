@@ -11,3 +11,5 @@ classes:
     - vagrant
     - docker::jessie
     - python
+    - nodejs
+    - ansible
