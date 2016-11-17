@@ -55,6 +55,7 @@ class haskell::debian {
         require => [
             Exec['grab-latest-xmonad'],
             Exec['grab-latest-contrib'],
+            Exec['cabal update'],
         ],
     }
 

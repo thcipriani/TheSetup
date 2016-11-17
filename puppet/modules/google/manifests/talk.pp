@@ -11,7 +11,10 @@ class google::talk {
     }
 
     package { 'google-talkplugin':
-        require => Exec['talk-apt'],
+        require => [
+            Exec['talk-apt'],
+            Exec['apt-get update'],
+        ]
     }
 
 }

@@ -1,7 +1,7 @@
 class vagrant::debian {
     package { [
         'vagrant',
-        'virtualbox-4.3',
+        'virtualbox-5.1',
     ]:
         require => [
             Exec['linux-headers'],
@@ -10,7 +10,7 @@ class vagrant::debian {
     }
 
     exec { 'virtualbox-key':
-        command => 'wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -',
+        command => 'wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add - && wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -',
         unless  => 'apt-key list | grep -q virtualbox',
     }
 

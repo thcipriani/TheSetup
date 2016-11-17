@@ -22,7 +22,7 @@ class volnoti {
     }
 
     exec { 'install-volnoti':
-        command => '/usr/local/src/volnoti-0.1/configure --prefix=/usr && make && install',
+        command => '/usr/local/src/volnoti-0.1/configure --prefix=/usr && make && make install',
         creates => '/usr/bin/volnoti',
         cwd     => '/usr/local/src/volnoti-0.1',
         require => Exec['unpack-volnoti'],

@@ -33,8 +33,6 @@ class base {
         'xfonts-terminus',
         'python-boto',
         'emacs',
-        'mutt-patched',
-        'msmtp',
         'powertop',
         'cheese',
         'nfs-kernel-server',
@@ -52,6 +50,8 @@ class base {
         'xscreensaver-gl-extra',
         'graphicsmagick',
         'xinput',
+        'xautolock',
+        'slock',
     ]:
         require => Exec['apt-get update'],
     }

@@ -12,7 +12,10 @@ class google::chrome {
     }
 
     package { 'google-chrome-stable':
-        require => Exec['chrome-apt'],
+        require => [
+            Exec['chrome-apt'],
+            Exec['apt-get update'],
+        ],
     }
 
 }
